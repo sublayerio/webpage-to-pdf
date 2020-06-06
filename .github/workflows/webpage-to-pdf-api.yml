@@ -2,8 +2,6 @@ name: Build Webpage to PDF API
 
 on:
   push:
-    branches: 
-      - master
     tags:
       - v*.*.*
 
