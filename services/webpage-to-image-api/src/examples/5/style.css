@@ -1,0 +1,64 @@
+/* Styles go here */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-header, .page-header-space {
+  height: 100px;
+}
+
+.page-footer, .page-footer-space {
+  height: 50px;
+}
+
+.page-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* for demo */
+  background: #004b8e;
+  /* for demo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.page-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* for demo */
+  background: #004b8e;
+  /* for demo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.page {
+  page-break-after: always;
+}
+
+@page {
+  margin: 0
+}
+
+@media print {
+  thead {
+    display: table-header-group;
+  }
+  tfoot {
+    display: table-footer-group;
+  }
+  button {
+    display: none;
+  }
+  body {
+    margin: 0;
+  }
+}
