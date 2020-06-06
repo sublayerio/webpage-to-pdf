@@ -2,6 +2,8 @@ name: Build Webpage to PDF API
 
 on:
   push:
+    branches: 
+      - master
     tags:
       - v*.*.*
 
@@ -19,7 +21,7 @@ jobs:
       - name: Build the Docker image
         working-directory: ./services/webpage-to-pdf-api
         run: docker build . --file Dockerfile-prod --tag docker.pkg.github.com/sublayerio/webpage-to-pdf/webpage-to-pdf-api:${{ steps.vars.outputs.tag }}
-      - name: Login into Gitlab Docker Registry
+      - name: Login into Github Docker Registry
         run: ${{ secrets.GITHUB_TOKEN }} | docker login https://docker.pkg.github.com -u keyflight --password-stdin
-      - name: Push image to Gitlab Docker Registry
+      - name: Push image to Github Docker Registry
         run: docker push docker.pkg.github.com/sublayerio/webpage-to-pdf/webpage-to-pdf-api:${{ steps.vars.outputs.tag }}
