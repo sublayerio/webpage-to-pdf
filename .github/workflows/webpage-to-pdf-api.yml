@@ -19,7 +19,7 @@ jobs:
       - name: Build the Docker image
         working-directory: ./services/webpage-to-pdf-api
         run: docker build . --file Dockerfile-prod --tag docker.pkg.github.com/sublayerio/webpage-to-pdf/webpage-to-pdf-api:${{ steps.vars.outputs.tag }}
-      - name: Login into Github Docker Registry
-        run: docker login https://docker.pkg.github.com -u keyflight -p ${{ secrets.GITHUB_TOKEN }}
-      - name: Push image to Github Docker Registry
-        run: docker push docker.pkg.github.com/sublayerio/webpage-to-pdf/webpage-to-pdf-api:${{ steps.vars.outputs.tag }}
+      - name: Login into Docker Registry
+        run: docker login -u sublayer -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Push image to Docker Registry
+        run: docker push sublayer/webpage-to-pdf-api:${{ steps.vars.outputs.tag }}
