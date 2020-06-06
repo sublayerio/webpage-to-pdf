@@ -1,0 +1,25 @@
+name: Build Webpage to PDF API
+
+on:
+  push:
+    tags:
+      - v*.*.*
+
+jobs:
+  build-webpage-to-pdf-api:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set environment variables
+        id: vars
+        run: |
+          echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+          echo ::set-output name=releaseDate::$(date -u +"%FT%T.000Z")
+      - name: Build the Docker image
+        working-directory: ./services/webpage-to-pdf-api
+        run: docker build . --file Dockerfile-prod --tag registry.gitlab.com/sublayer/webpage-to-pdf-api:${{ steps.vars.outputs.tag }}
+      - name: Login into Gitlab Docker Registry
+        run: docker login registry.gitlab.com -u ${{ secrets.GITLAB_USERNAME }} -p ${{ secrets.GITLAB_PASSWORD }}
+      - name: Push image to Gitlab Docker Registry
+        run: docker push registry.gitlab.com/sublayer/webpage-to-pdf-api:${{ steps.vars.outputs.tag }}

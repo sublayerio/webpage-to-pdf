@@ -1,0 +1,20 @@
+.layered-images {
+  width: 200px;
+  height: 200px;
+  background-image: url(image-1.png), url(image-2.png), url(image-3.png), url(image-4.png);
+  background-size: cover;
+}
+
+.high-res-image {
+  width: 200px;
+  height: 200px;
+  background-image: url(high-res-image.jpg);
+  background-size: contain;
+}
+
+.high-res-image-2 {
+  width: 200px;
+  height: 200px;
+  background-image: url(high-res-image-2.jpg);
+  background-size: contain;
+}

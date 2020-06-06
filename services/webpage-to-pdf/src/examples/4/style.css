@@ -1,0 +1,26 @@
+body {
+  color: #001028;
+  background: #FFFFFF;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-family: Arial;
+  margin: 0;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  page-break-after: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.page h1 {
+  color: white;
+  font-size: 40px;
+}
