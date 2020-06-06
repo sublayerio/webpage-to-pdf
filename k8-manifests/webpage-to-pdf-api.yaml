@@ -28,7 +28,7 @@ spec:
         - name: sublayer-gitlab-creds
       containers:
         - name: webpage-to-pdf-api
-          image: registry.gitlab.com/sublayer/sublayer/webpage-to-pdf-api:0.1.0
+          image: registry.gitlab.com/sublayer/sublayer/webpage-to-pdf-api:1.0.5
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
