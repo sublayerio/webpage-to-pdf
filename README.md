@@ -10,7 +10,7 @@ The API takes a webpage as input and turns it into a PDF file in the same way th
 
 The following query parameters can be passed:
 
-- **url** — The url to capture
+- **url** — The url to capture.
 - **margin** — Paper margins, defaults to none.
 - **printBackground** — Print background graphics. Defaults to false. Useful when you want `background-image` styles to be printed.
 - **pageRange** — Paper ranges to print, e.g., '1-5, 8, 11-13'. Defaults to the empty string, which means print all pages.
