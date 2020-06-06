@@ -1,14 +1,14 @@
 version: "3"
 
 services:
-  webpage-to-pdf:
-    build: ./services/webpage-to-pdf
+  webpage-to-pdf-api:
+    build: ./services/webpage-to-pdf-api
     env_file:
-      - ./environment/webpage-to-pdf-api.development.env
+      - ./environment/webpage-to-pdf-api-api.development.env
     environment:
       - PORT=3000
     volumes:
-      - ./services/webpage-to-pdf/src:/app/src:cached
+      - ./services/webpage-to-pdf-api/src:/app/src:cached
     ports:
       - 5015:3000
     restart: always
