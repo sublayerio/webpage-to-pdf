@@ -1,9 +1,9 @@
 name: Build Webpage to PDF API
 
 on:
-  push:
-    tags:
-      - v*.*.*
+  release:
+    types:
+      - created
 
 jobs:
   build-webpage-to-pdf-api:
