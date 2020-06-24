@@ -70,7 +70,7 @@ app.get('/pdf', async (req, res) => {
 
         const page = await browser.newPage()
 
-        await page.goto(url, { waitUntil: 'networkidle2' })
+        await page.goto(url, { waitUntil: 'load' })
 
         await wait(timeout)
 

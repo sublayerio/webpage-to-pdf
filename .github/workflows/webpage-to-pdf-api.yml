@@ -23,3 +23,4 @@ jobs:
         run: docker login -u sublayer -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Push image to Docker Registry
         run: docker push sublayer/webpage-to-pdf-api:${{ steps.vars.outputs.tag }}
+        
